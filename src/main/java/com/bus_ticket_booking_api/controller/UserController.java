@@ -31,6 +31,7 @@ public class UserController {
 	public List<User> findAll() {
 		List<User> list=userRepository.findAll();
 		return list;
+		
 	}
 	
 	@PutMapping("User/update")// update user
@@ -55,6 +56,6 @@ public class UserController {
 		else {
 		return null;
 	     }
-		}
-	
+		
+}
 }
