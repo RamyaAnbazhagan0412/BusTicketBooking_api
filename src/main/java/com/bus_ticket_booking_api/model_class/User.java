@@ -25,13 +25,13 @@ public class User {
 	@Column(name="user_name")
 	private String  userName;
 	
-	@Column(name="user_emailId")
+	@Column(name="user_email")
 	private String emailId;
 	
 	@Column(name="user_password")
 	private String password;
 	
-	@Column(name="user_phoneNumber")
+	@Column(name="user_phone_number")
 	private String phoneNumber;
 
 	public void setId(Integer id) {

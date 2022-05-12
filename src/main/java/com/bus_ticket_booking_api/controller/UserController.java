@@ -10,6 +10,7 @@ import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.PutMapping;
 import org.springframework.web.bind.annotation.RequestBody;
+import org.springframework.web.bind.annotation.RequestParam;
 import org.springframework.web.bind.annotation.RestController;
 
 import com.bus_ticket_booking_api.interface_dao.UserDAO;
@@ -47,8 +48,8 @@ public class UserController {
 		userRepository.deleteById(id);
 	}
 	
-	@GetMapping("User/{id}")
-	public User findById(@PathVariable("id") Integer id) {
+	@GetMapping("list")
+	public User findById(@RequestParam("id") Integer id) {
 		Optional<User> list=userRepository.findById(id);
 		if(list.isPresent()) {
 			return list.get();

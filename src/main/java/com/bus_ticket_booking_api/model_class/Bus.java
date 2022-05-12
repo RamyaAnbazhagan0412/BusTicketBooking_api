@@ -36,5 +36,8 @@ public class Bus {
 	@Column(name="bus_ticket_price")
 	private int  busTicketPrice;
 	
+	@Column(name="bus_stopping")
+	private String  busStop;
+	
 	
 }

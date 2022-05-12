@@ -37,8 +37,8 @@ public class BusController {
 			
 		}
 		
-		@PutMapping("Buses/{id}")// update user
-		public void update(@PathVariable("id") Integer id,@RequestBody Bus bus)
+		@PutMapping("Buses/id")// update user
+		public void update(@RequestParam("id") Integer id,@RequestBody Bus bus)
 		{
 			bus.setBusId(id);
 			busRepository.save(bus);
@@ -50,9 +50,10 @@ public class BusController {
 			busRepository.deleteById(id);
 		}
 		
-		@GetMapping("Buses/{id}")
-		public Bus findById(@PathVariable("id") Integer id) {
+		@GetMapping("Buses/byId")
+		public Bus findById(@RequestParam("id") Integer id) {
 			Optional<Bus> list=busRepository.findById(id);
+			System.out.println(list);
 			if(list.isPresent()) {
 				return list.get();
 			}
